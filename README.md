@@ -29,7 +29,20 @@ O projeto entrega uma experiência de e-commerce moderna com as seguintes funcio
 
 A estrutura de diretórios do projeto reflete a separação de responsabilidades (estrutura, estilo e lógica) e garante a organização dos ativos.
 
-catalogo-produtos/ ├── index.html # Página principal e estrutura do catálogo. ├── css/ │ ├── style.css # Estilos principais, cores, layout base e carrossel. │ └── responsive.css # Regras CSS para adaptação em telas menores. ├── js/ │ ├── main.js # Lógica principal: AJAX, filtros, carrossel e carrinho. │ └── produtos.js # (Reservado para lógica específica de renderização). ├── data/ │ └── produtos.json # Arquivo JSON com o catálogo de produtos. ├── assets/ │ └── images/ # Pasta para imagens de produtos e hero sections. │ └── placeholder.png └── README.md
+catalogo-produtos/
+├── index.html            
+├── css/                  
+│   ├── style.css         
+│   └── responsive.css    
+├── js/                   
+│   ├── main.js           
+│   └── produtos.js       
+├── data/                 
+│   └── produtos.json     
+├── assets/              
+│   └── images/           
+│       └── placeholder.png 
+└── README.md             
 
 
 ---
