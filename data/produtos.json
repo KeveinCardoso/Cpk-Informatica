@@ -1,0 +1,117 @@
+{
+  "mensagem": "Catálogo carregado com sucesso!",
+  "total": 12,
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook Gamer",
+      "categoria": "Eletrônicos",
+      "preco": 4500.00,
+      "descricao": "Intel i7, 16GB RAM, RTX 3060 para alto desempenho em jogos.",
+      "imagem": "/assets/notebook.png",
+      "estoque": 15
+    },
+    {
+      "id": 2,
+      "nome": "Mouse Gamer RGB",
+      "categoria": "Periféricos",
+      "preco": 150.00,
+      "descricao": "12000 DPI, 7 botões programáveis para maior precisão.",
+      "imagem": "/assets/mousrgp.png",
+      "estoque": 50
+    },
+    {
+      "id": 3,
+      "nome": "Monitor Ultrawide 34\"",
+      "categoria": "Eletrônicos",
+      "preco": 2890.00,
+      "descricao": "Resolução 3440x1440, 144Hz, painel IPS.",
+      "imagem": "/assets/monitor-gamer-lg-ultragear-lg-34.png",
+      "estoque": 8
+    },
+    {
+      "id": 4,
+      "nome": "Teclado Mecânico TKL",
+      "categoria": "Periféricos",
+      "preco": 320.00,
+      "descricao": "Switches marrons, layout Tenkeyless (TKL), retroiluminação.",
+      "imagem": "/assets/teclado-tkl.png",
+      "estoque": 35
+    },
+    {
+      "id": 5,
+      "nome": "Headset USB 7.1",
+      "categoria": "Acessórios",
+      "preco": 480.00,
+      "descricao": "Áudio surround 7.1, microfone com cancelamento de ruído.",
+      "imagem": "/assets/HeadsetUSB7.1.png",
+      "estoque": 22
+    },
+    {
+      "id": 6,
+      "nome": "Webcam Full HD",
+      "categoria": "Acessórios",
+      "preco": 120.00,
+      "descricao": "1080p a 30fps, foco automático, ideal para streamings.",
+      "imagem": "/assets/webcanFullHD.png",
+      "estoque": 60
+    },
+    {
+      "id": 7,
+      "nome": "Tablet Pro 11\"",
+      "categoria": "Eletrônicos",
+      "preco": 3999.00,
+      "descricao": "Processador octa-core, 8GB RAM, caneta stylus inclusa.",
+      "imagem": "/assets/tablet11.png",
+      "estoque": 18
+    },
+    {
+      "id": 8,
+      "nome": "SSD M.2 NVMe 1TB",
+      "categoria": "Periféricos",
+      "preco": 550.00,
+      "descricao": "Velocidade de leitura de 3500 MB/s, interface PCIe Gen3.",
+      "imagem": "/assets/ssdpciekingston.png",
+      "estoque": 40
+    },
+    {
+      "id": 9,
+      "nome": "Cabo HDMI 2.1",
+      "categoria": "Acessórios",
+      "preco": 85.00,
+      "descricao": "Suporta 8K a 60Hz e 4K a 120Hz, 2 metros.",
+      "imagem": "/assets/cabohdmi2.1.png",
+      "estoque": 110
+    },
+    {
+      "id": 10,
+      "nome": "Roteador Dual Band Wi-Fi 6",
+      "categoria": "Eletrônicos",
+      "preco": 750.00,
+      "descricao": "Velocidade total de 3000 Mbps, cobertura para grandes áreas.",
+      "imagem": "/assets/roteadirdeco.png",
+      "estoque": 25
+    },
+    {
+      "id": 11,
+      "nome": "Suporte Ergonômico para Monitor",
+      "categoria": "Acessórios",
+      "preco": 99.00,
+      "descricao": "Ajuste de altura e inclinação, alívio de tensão no pescoço.",
+      "imagem": "/assets/shopping.png",
+      "estoque": 75
+    },
+    {
+      "id": 12,
+      "nome": "Mousepad Grande Speed",
+      "categoria": "Periféricos",
+      "preco": 65.00,
+      "descricao": "Tecido de alta densidade, base de borracha antiderrapante (90x40cm).",
+      "imagem": "/assets/MousepadGrandeSpeed.png",
+      "estoque": 90
+    }
+
+    
+
+  ]
+}

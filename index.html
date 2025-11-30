@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online - Catálogo de Produtos Premium</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/responsive.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#">
+                    <i class="fas fa-store"></i>
+                    <span>CPK-Informatica</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Início</span>
+                </a>
+                <a href="#product-grid" class="nav-link"> 
+                    <i class="fas fa-boxes"></i>
+                    <span>Produtos</span>
+                </a>
+                
+                
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn wishlist-btn" title="Lista de Desejos">
+                    <i class="far fa-heart"></i>
+                    <span class="nav-badge">3</span>
+                </button>
+                
+                <button class="nav-icon-btn cart-btn" title="Carrinho de Compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="nav-badge">5</span>
+                </button>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header carousel-container">
+    <div class="carousel-wrapper" id="carousel-wrapper">
+        
+        <div class="carousel-slide slide-1 active" data-background="/assets/carrossel1.png">
+            <div class="header-content">
+                <h1>🛒 Catálogo de Produtos Premium</h1>
+                <p class="header-subtitle">Encontre os melhores produtos com qualidade e preço imbatível</p>
+                
+            </div>
+        </div>
+
+        <div class="carousel-slide slide-2" data-background="/assets/carrossel2.png">
+            <div class="header-content">
+                <h1>🔥 Ofertas Relâmpago em Eletrônicos</h1>
+                <p class="header-subtitle">Até 40% OFF em notebooks e acessórios gamer. Aproveite!</p>
+                
+            </div>
+        </div>
+
+        <div class="carousel-slide slide-3" data-background="/assets/carrossel3.png">
+            <div class="header-content">
+                <h1>📦 Entrega Rápida e Segura</h1>
+                <p class="header-subtitle">Frete grátis para todo o Brasil em compras acima de R$ 100.</p>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-control prev" aria-label="Slide Anterior" id="carousel-prev">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-control next" aria-label="Próximo Slide" id="carousel-next">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="carousel-dots" id="carousel-dots">
+        <span class="dot active" data-slide-to="0"></span>
+        <span class="dot" data-slide-to="1"></span>
+        <span class="dot" data-slide-to="2"></span>
+    </div>
+
+</header>
+
+    <main class="container">
+        
+        <section class="controls-panel">
+    
+    <div class="search-container">
+        <i class="fas fa-search"></i> 
+        <input type="text" id="search-input" placeholder="Buscar por nome..." class="search-field">
+    </div>
+    
+    <div class="filter-sort-group">
+        <select id="filter-category" class="filter-select">
+            <option value="all">Todas as Categorias</option>
+        </select>
+
+        <select id="sort-by" class="filter-select">
+            <option value="default">Ordenar por...</option>
+            <option value="nome-asc">Nome (A-Z)</option>
+            <option value="nome-desc">Nome (Z-A)</option>
+            </select>
+    </div>
+    
+    <button id="load-products-btn" class="btn-secondary">
+        <i class="fas fa-sync-alt"></i>
+        Carregar Produtos
+    </button>
+</section>
+
+        <div class="promo-banner">
+            <div class="promo-content">
+                <i class="fas fa-shipping-fast"></i>
+                <span>**OFERTA RELÂMPAGO:** Frete Grátis em compras acima de R$ 100</span>
+                <a href="https://preview.redd.it/the-original-image-of-the-monkey-thinking-meme-v0-ea1hkdjnx9af1.jpeg?width=1080&crop=smart&auto=webp&s=5fb2b05369bfbffd94d6009a679a9a5fe5e4223f" class="promo-link">Saiba mais →</a>
+            </div>
+        </div>
+
+        <div id="status-message" class="status-box"></div>
+
+        <section id="product-grid" class="product-grid">
+            <div class="product-card">
+                <div class="product-image-container">
+                     
+                    <span class="product-badge new">Novo</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Fone de Ouvido Bluetooth X3</h3>
+                    <p class="product-category">Eletrônicos</p>
+                    <div class="product-price">
+                        <span class="price-current">R$ 199,90</span>
+                        <span class="price-old">R$ 250,00</span>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image-container">
+                                        <span class="product-badge sale">50% OFF</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Carteira de Couro Clássica</h3>
+                    <p class="product-category">Acessórios</p>
+                    <div class="product-price">
+                        <span class="price-current">R$ 49,90</span>
+                        <span class="price-old">R$ 99,90</span>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CPK-Informatica</h3>
+                <p>Sua loja de confiança para produtos de qualidade com os melhores preços.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <a href="#">Sobre nós</a>
+                <a href="#">Contato</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Devoluções</a>
+            </div>
+            <div class="footer-section">
+                <h4>Atendimento ao Cliente</h4>
+                <p><i class="fas fa-phone"></i> (81) 99319-6550</p>
+                <p><i class="fas fa-envelope"></i> contato@CPK-Informatica.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - SP</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CPK-Informatica. Todos os direitos reservados. Design por Parceiro de Programação.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+</html>

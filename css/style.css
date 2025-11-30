@@ -1,0 +1,842 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+    /* Cores */
+    --primary-color: #007bff; /* Azul profissional */
+    --secondary-color: #28a745; /* Verde de sucesso/adição */
+    --accent-color: #dc3545; /* Vermelho de preço/oferta */
+    --background-color: #f8f9fa; /* Fundo leve */
+    --card-background: #ffffff; /* Fundo do card */
+    --text-color: #343a40;
+    --light-text-color: #6c757d;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    
+    /* Tipografia */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --header-font: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: var(--header-font);
+    color: #212529;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Botões base */
+.btn-primary, .btn-secondary, .btn-add-cart {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary, .hero-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover, .hero-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ==================================== */
+/* 1. NAVBAR (Barra de Navegação) */
+/* ==================================== */
+
+.navbar {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-logo i {
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.nav-icon-btn:hover {
+    color: var(--primary-color);
+}
+
+.nav-badge {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 5px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.nav-toggle {
+    display: none; /* Escondido por padrão, usado em mobile */
+}
+
+/* ==================================== */
+/* 2. HEADER (Hero Section) */
+/* ==================================== */
+
+.hero-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path/to/hero-image.jpg') center/cover no-repeat;
+    /* Substitua 'path/to/hero-image.jpg' por uma imagem de alta qualidade */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    color: #e9ecef;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+}
+
+/*====================================*/
+/*3.PAINEL DE CONTROLE (Filtros e Busca)*/
+/*==================================== */
+
+/* ==================================== */
+/* 3. PAINEL DE CONTROLE (Filtros e Busca) - MELHORADO */
+/* ==================================== */
+
+.controls-panel {
+    /* Usamos display flex para manter o alinhamento central */
+    display: flex; 
+    align-items: center;
+    gap: 20px; /* Aumenta o espaçamento entre os grupos de elementos */
+    
+    padding: 20px 30px; /* Padding interno mais generoso */
+    margin-bottom: 35px;
+    background-color: var(--card-background);
+    border-radius: 12px; /* Borda mais arredondada */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+}
+
+/* Container de Busca com Ícone */
+.search-container {
+    flex-grow: 1;
+    position: relative;
+    max-width: 400px; /* Limita a largura da busca para equilibrar o layout */
+}
+
+.search-field {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Adiciona padding à esquerda para o ícone */
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Arredondamento consistente */
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sombra mais suave no foco */
+}
+
+/* Estilo para o ícone de busca (se você usar um elemento <i> dentro do .search-container) */
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    pointer-events: none; /* Garante que o clique passe para o campo de input */
+}
+
+.filter-sort-group {
+    display: flex;
+    gap: 15px;
+    /* Adiciona um container visual discreto para filtros/ordenação */
+    background-color: var(--background-color); 
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    appearance: none; /* Remove a aparência nativa em alguns navegadores (necessário para ícone) */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%236c757d" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    padding-right: 30px; /* Espaço para o ícone personalizado */
+    transition: border-color 0.3s;
+}
+
+.filter-select:hover {
+    border-color: var(--primary-color);
+}
+
+/* MELHORIA NO BOTÃO SECUNDÁRIO */
+.btn-secondary {
+    padding: 12px 25px; /* Padding um pouco maior */
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px; /* Arredondamento consistente */
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+}
+
+/* ==================================== */
+/* 4. PROMO BANNER */
+/* ==================================== */
+
+.promo-banner {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.promo-link {
+    color: #ffc107; /* Amarelo de alerta */
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.promo-link:hover {
+    color: white;
+}
+
+/* ==================================== */
+/* 5. GRID DE PRODUTOS */
+/* ==================================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-image-container {
+    position: relative;
+    height: 250px;
+    background-color: var(--background-color); /* Fundo para imagem placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Melhor para e-commerce, pois não corta a imagem */
+    padding: 10px;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    z-index: 10;
+}
+
+.product-badge.new {
+    background-color: var(--primary-color);
+}
+
+.product-badge.sale {
+    background-color: var(--accent-color);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1;
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.product-category {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 10px;
+}
+
+/* NOVO: Estiliza o agrupamento de botões na base */
+.card-actions {
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    padding-top: 10px; 
+    border-top: 1px solid var(--border-color);
+}
+
+.product-stock {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.product-stock.low-stock {
+    color: var(--accent-color); /* Vermelho */
+    font-weight: bold;
+}
+
+.btn-details {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.btn-details:hover {
+    color: #0056b3;
+}
+
+/* Ajuste no preço para centralizar */
+.product-price {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 15px; 
+}
+
+.price-old {
+    order: 1; 
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    text-decoration: line-through;
+}
+
+.price-current {
+    order: 2; 
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* Estilo para o botão principal de adicionar ao carrinho */
+.btn-add-cart {
+    background-color: var(--secondary-color); /* Verde */
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.btn-add-cart:hover {
+    background-color: #1e7e34;
+}
+
+.btn-add-cart[disabled] {
+    background-color: var(--light-text-color);
+    cursor: not-allowed;
+}
+
+/* ==================================== */
+/* 6. STATUS BOX E MODAL */
+/* ==================================== */
+
+.status-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #ffeeba;
+    color: #856404;
+    border: 1px solid #ffc720;
+    text-align: center;
+    font-weight: 500;
+}
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Fundo preto semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% do topo e centralizado */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do Modal de Detalhes */
+.modal-product {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.modal-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-details {
+    flex: 1;
+}
+
+.modal-details h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.modal-category, .modal-price, .modal-stock {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.modal-description {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.modal-actions .btn-primary {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+}
+
+
+/* ==================================== */
+/* 7. FOOTER */
+/* ==================================== */
+
+.footer {
+    background-color: #212529; /* Preto escuro */
+    color: #f8f9fa;
+    padding: 40px 0 10px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #495057;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3, .footer-section h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: var(--light-text-color);
+}
+
+.footer-section a {
+    display: block;
+    color: var(--light-text-color);
+    margin-bottom: 8px;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.footer-section i {
+    margin-right: 8px;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--light-text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: var(--light-text-color);
+    font-size: 0.85rem;
+}
+
+/* ==================================== */
+/* 2. HEADER (Carousel Section) - CORREÇÃO DE VISIBILIDADE E ALINHAMENTO */
+/* ==================================== */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden; 
+    min-height: 400px;
+    margin-bottom: 30px;
+    background-color: #343a40; /* Cor de fallback escura (ajustada) */
+}
+
+/* O wrapper deve permitir que o conteúdo de texto se posicione sobre ele */
+.carousel-wrapper {
+    position: absolute; /* Permite que o slide se sobreponha */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Removemos o "display: flex" do wrapper, pois a transição será feita pelo JS (opacidade) */
+}
+
+.carousel-slide {
+    position: absolute; /* Permite a sobreposição dos slides */
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: center/cover no-repeat;
+    
+    /* Chave da animação e visibilidade: Inicia invisível */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; 
+}
+
+.carousel-slide.active {
+    opacity: 1; /* Slide ativo é totalmente visível */
+}
+
+/* Conteúdo de Texto - Garante que ele fique em primeiro plano */
+.header-content {
+    z-index: 5; /* Garante que o texto fique acima do fundo da imagem */
+    padding: 20px 40px;
+    /* Ajuste para melhor legibilidade: fundo sutilmente mais escuro */
+    background-color: rgba(0, 0, 0, 0.25); 
+    border-radius: 10px;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra forte para destaque */
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    color: #f8f9fa; /* Branco levemente suave */
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+}
+
+/* -------------------------------------- */
+/* NOVAS REGRAS: Controles (Setas) */
+/* -------------------------------------- */
+.carousel-control {
+    position: absolute;
+    top: 50%; /* Alinhamento ao meio do container */
+    transform: translateY(-50%); /* Ajuste fino para centralizar verticalmente */
+    
+    background: rgba(211, 5, 5, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px 12px; /* Padding ajustado para ser mais fino */
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    
+    /* CHAVE: Invisível por padrão */
+    opacity: 0;
+    transition: opacity 0.10s;
+}
+
+/* CHAVE: Mostra as setas ao passar o mouse no carrossel */
+.carousel-container:hover .carousel-control {
+    opacity: 1;
+}
+
+.carousel-control:hover {
+    background: rgba(76, 79, 83, 0.7); /* Fundo mais escuro no hover para destaque */
+}
+
+.carousel-control.prev {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.carousel-control.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+/* -------------------------------------- */
+/* NOVAS REGRAS: Indicadores (Pontos) */
+/* -------------------------------------- */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #cacaca;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
