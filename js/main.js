@@ -2,7 +2,7 @@
 $(document).ready(function() {
     
     // ===================================================
-    // 1. VARIÁVEIS DE ESTADO
+    // VARIÁVEIS DE ESTADO
     // ===================================================
     let produtos = [];
     let produtosFiltrados = [];
@@ -10,7 +10,7 @@ $(document).ready(function() {
     let carrinhoContagem = 0;
 
     // ===================================================
-    // 2. ELEMENTOS DOM
+    //  ELEMENTOS DOM
     // ===================================================
     const $productGrid = $('#product-grid');
     const $statusMessage = $('#status-message');
@@ -24,7 +24,7 @@ $(document).ready(function() {
     const $cartCount = $('#cart-count'); // Elemento para exibir a contagem no cabeçalho
 
     // ===================================================
-    // 3. FUNÇÕES DE ESTADO E UTILIDADE
+    //  FUNÇÕES DE ESTADO E UTILIDADE
     // ===================================================
 
     function setLoadingState() {
@@ -40,7 +40,7 @@ $(document).ready(function() {
     function carregarProdutos() {
         setLoadingState();
         
-        // Assumindo que você tem um arquivo data/produtos.json
+        // arquivo data/produtos.json
         $.ajax({
             url: 'data/produtos.json',
             type: 'GET',
@@ -79,9 +79,8 @@ $(document).ready(function() {
         });
     }
 
-    // ===================================================
-    // 4. LÓGICA DO CARRINHO
-    // ===================================================
+
+    //  LÓGICA DO CARRINHO
 
     /**
      * Adiciona um produto ao carrinho e atualiza o estoque.
@@ -97,10 +96,10 @@ $(document).ready(function() {
             return;
         }
         
-        // 1. Atualiza o estoque na lista global
+        // Atualiza o estoque na lista global
         produto.estoque--;
         
-        // 2. Atualiza o carrinho (array detalhado)
+        // Atualiza o carrinho (array detalhado)
         const itemCarrinho = carrinho.find(item => item.id === productId);
         
         if (itemCarrinho) {
@@ -114,11 +113,11 @@ $(document).ready(function() {
             });
         }
         
-        // 3. Atualiza a contagem simples no DOM
+        // Atualiza a contagem simples no DOM
         carrinhoContagem++;
         $cartCount.text(carrinhoContagem); 
         
-        // 4. Feedback visual
+        // Feedback visual
         if ($button) {
             $button.prop('disabled', true).html('<i class="fas fa-check"></i> Adicionado');
             setTimeout(() => {
@@ -132,9 +131,7 @@ $(document).ready(function() {
         }
     }
 
-    // ===================================================
     // 5. RENDERIZAÇÃO E EVENTOS
-    // ===================================================
     
     // Exibir produtos na grid - CORRIGIDO PARA USAR AS CLASSES DO CSS
     function exibirProdutos(produtosArray) {
@@ -297,9 +294,7 @@ $(document).ready(function() {
         });
     }
 
-    // ===================================================
-    // 6. INICIALIZAÇÃO E EVENTOS GERAIS
-    // ===================================================
+    //  INICIALIZAÇÃO E EVENTOS GERAIS
 
     // Event Listeners
     $loadProductsBtn.on('click', carregarProdutos);
@@ -335,9 +330,8 @@ $(document).ready(function() {
     // Inicialização
     carregarProdutos(); // Carrega produtos automaticamente ao carregar a página
 
-    // ===================================================
-    // 7. AÇÕES DA NAVBAR (Mobile) - NOVO
-    // ===================================================
+    
+    // AÇÕES DA NAVBAR (Mobile)
     const $navToggle = $('#nav-toggle');
     const $navMenu = $('#nav-menu');
 
@@ -346,9 +340,9 @@ $(document).ready(function() {
     });
 });
 
-// ===================================================
-// 8. LÓGICA DO CARROSSEL (NOVO)
-// ===================================================
+
+// LÓGICA DO CARROSSEL
+
 function inicializarCarrossel() {
     const $carouselContainer = $('.carousel-container');
     const $slides = $carouselContainer.find('.carousel-slide');
@@ -357,7 +351,7 @@ function inicializarCarrossel() {
     let currentIndex = 0;
     let intervalId;
 
-    // 1. Função de renderização para mostrar o slide correto
+    // Função de renderização para mostrar o slide correto
     function updateCarousel(newIndex) {
         // Remove a classe 'active' de todos os slides e dots
         $slides.removeClass('active');
@@ -383,10 +377,10 @@ function inicializarCarrossel() {
         }
     }
 
-    // 2. Inicializa a exibição (aplica o fundo da primeira imagem)
+    // Inicializa a exibição (aplica o fundo da primeira imagem)
     updateCarousel(0); 
 
-    // 3. Função para alternar slides automaticamente
+    // Função para alternar slides automaticamente
     function startAutoSlide() {
         if (intervalId) {
             clearInterval(intervalId);
@@ -396,7 +390,7 @@ function inicializarCarrossel() {
         }, 3000); // Troca a cada 5 segundos
     }
 
-    // 4. Controles de clique (setas)
+    // Controles de clique (setas)
     $('#carousel-next').on('click', function() {
         startAutoSlide(); // Reinicia o timer após interação manual
         updateCarousel(currentIndex + 1);
@@ -407,7 +401,7 @@ function inicializarCarrossel() {
         updateCarousel(currentIndex - 1);
     });
 
-    // 5. Controles de clique (pontos)
+    // Controles de clique (pontos)
     $dots.on('click', function() {
         const slideIndex = $(this).data('slide-to');
         startAutoSlide(); // Reinicia o timer
