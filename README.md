@@ -29,7 +29,7 @@ O projeto entrega uma experiência de e-commerce moderna com as seguintes funcio
 
 A estrutura de diretórios do projeto reflete a separação de responsabilidades (estrutura, estilo e lógica) e garante a organização dos ativos.
 
-catalogo-produtos/
+
 ├── index.html            
 ├── css/                  
 │   ├── style.css         
@@ -41,7 +41,7 @@ catalogo-produtos/
 │   └── produtos.json     
 ├── assets/              
 │   └── images/           
-│       └── placeholder.png 
+│      └── placeholder.png 
 └── README.md             
 
 
